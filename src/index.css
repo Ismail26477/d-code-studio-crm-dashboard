@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* D-Code Studio Purple Theme */
+    --background: 263 100% 98%;
+    --foreground: 0 0% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+
+    --primary: 262 83% 66%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 263 91% 85%;
+    --secondary-foreground: 262 83% 40%;
+
+    --muted: 263 30% 94%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 263 78% 76%;
+    --accent-foreground: 262 83% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 263 30% 90%;
+    --input: 263 30% 90%;
+    --ring: 262 83% 66%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar - Light Lavender */
+    --sidebar-background: 263 50% 97%;
+    --sidebar-foreground: 0 0% 12%;
+    --sidebar-primary: 262 83% 66%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 263 91% 85%;
+    --sidebar-accent-foreground: 262 83% 40%;
+    --sidebar-border: 263 30% 92%;
+    --sidebar-ring: 262 83% 66%;
+
+    /* Custom Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262, 83%, 66%), hsl(263, 91%, 85%));
+    --gradient-header: linear-gradient(135deg, #8B5CF6, #C4B5FD);
+    --gradient-card-hover: linear-gradient(135deg, hsl(263, 100%, 98%), hsl(263, 50%, 97%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(139, 92, 246, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(139, 92, 246, 0.1), 0 2px 4px -2px rgba(139, 92, 246, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(139, 92, 246, 0.1), 0 4px 6px -4px rgba(139, 92, 246, 0.1);
+    --shadow-card: 0 1px 3px rgba(139, 92, 246, 0.08), 0 1px 2px rgba(139, 92, 246, 0.06);
+    --shadow-card-hover: 0 10px 25px -5px rgba(139, 92, 246, 0.15), 0 8px 10px -6px rgba(139, 92, 246, 0.1);
+  }
+
+  .dark {
+    --background: 260 30% 8%;
+    --foreground: 263 20% 95%;
+
+    --card: 260 30% 12%;
+    --card-foreground: 263 20% 95%;
+
+    --popover: 260 30% 12%;
+    --popover-foreground: 263 20% 95%;
+
+    --primary: 262 83% 66%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 30% 18%;
+    --secondary-foreground: 263 20% 90%;
+
+    --muted: 260 30% 18%;
+    --muted-foreground: 263 20% 65%;
+
+    --accent: 263 78% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 60% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 80% 45%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 260 30% 20%;
+    --input: 260 30% 20%;
+    --ring: 262 83% 66%;
+
+    --sidebar-background: 260 30% 10%;
+    --sidebar-foreground: 263 20% 95%;
+    --sidebar-primary: 262 83% 66%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 30% 18%;
+    --sidebar-accent-foreground: 263 20% 90%;
+    --sidebar-border: 260 30% 18%;
+    --sidebar-ring: 262 83% 66%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-header {
+    background: var(--gradient-header);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-shadow-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .shadow-purple-sm {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .shadow-purple-md {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-purple-lg {
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
